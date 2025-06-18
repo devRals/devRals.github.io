@@ -20,10 +20,6 @@ const theme = createTheme({
     fontFamily: "undertale",
     colors: {
         dark: [
-            // WHAT!? Is it wrong that I don't know how to create my own color pallette?!
-            // Anyway here's Dennis's credits hehe :3
-            // https://github.com/TheAlan404/TheAlan404.github.io/blob/master/src/index.tsx
-
             "#C1C2C5",
             "#A6A7AB",
             "#909296",

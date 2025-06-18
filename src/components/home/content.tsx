@@ -1,13 +1,13 @@
 import { MY_AGE } from "@/data/constants";
 import {
-    Group,
-    ListItem,
-    Tooltip,
-    Text,
-    Image,
-    Stack,
     Box,
+    Group,
+    Image,
     List,
+    ListItem,
+    Stack,
+    Text,
+    Tooltip,
 } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 
@@ -133,9 +133,7 @@ export default function HomeContent() {
                         </List.Item>
                         <List.Item>
                             <Tooltip
-                                label={
-                                    "I'm addicted to this game. Guess that's why I've less friends"
-                                }
+                                label={"I'm addicted to this game. Guess that's why I've less friends"}
                             >
                                 <Text
                                     c={"pink"}
@@ -170,12 +168,6 @@ export default function HomeContent() {
                 </Text>
             </ListItem>
             <ListItem>{t("home.items.8")}</ListItem>
-
-            <ListItem>
-                {t("home.items.9.prefix")}{" "}
-                <Text c="blue">{t("home.items.9.content")}</Text>
-                {t("home.items.9.suffix")}{" "}
-            </ListItem>
         </Stack>
     );
 }

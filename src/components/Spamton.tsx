@@ -2,7 +2,7 @@ import { Image, Tooltip } from "@mantine/core";
 import { useHover } from "@mantine/hooks";
 
 const Spamton = () => {
-    const { ref, hovered } = useHover<HTMLImageElement>();
+    const { ref, hovered } = useHover();
     return (
         <Tooltip
             multiline
