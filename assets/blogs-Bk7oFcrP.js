@@ -1,4 +1,4 @@
-import{j as t,T as s}from"./index-CIcocKhR.js";const r=void 0,i={id:1,title:"First blog",description:"This is my first blog",date:new Date(2024,8,11),slug:"first"};function o(n){const e={h1:"h1",p:"p",...n.components};return t.jsxs(t.Fragment,{children:[t.jsx(e.h1,{children:"First Blog WORKS"}),`
+import{j as t,T as s}from"./index-DoWB4VfU.js";const r=void 0,i={id:1,title:"First blog",description:"This is my first blog",date:new Date(2024,8,11),slug:"first"};function o(n){const e={h1:"h1",p:"p",...n.components};return t.jsxs(t.Fragment,{children:[t.jsx(e.h1,{children:"First Blog WORKS"}),`
 `,t.jsx(e.p,{children:"I never thought I'd write a blog. But I did."}),`
 `,`
 `,t.jsx(s,{label:"HEEELP! I think I'm going to throw up",position:"right",children:t.jsx("img",{src:"/images/sprites/ralsei_spinning.gif",alt:"rals",width:"50"})})]})}function l(n={}){const{wrapper:e}=n.components||{};return e?t.jsx(e,{...n,children:t.jsx(o,{...n})}):o(n)}const a=Object.freeze(Object.defineProperty({__proto__:null,blogInfo:i,default:l,frontmatter:r},Symbol.toStringTag,{value:"Module"})),d=[i];export{d as b,a as f};

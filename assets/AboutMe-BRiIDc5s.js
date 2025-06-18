@@ -1,40 +1,40 @@
-import{c as s,u as y,j as e,L as k,b as r,d as v,T as f,I as g,e as x,f as l,S as h,G as d,h as i,F as m,i as b}from"./index-CIcocKhR.js";import{C as M,a as t}from"./Card-BB8Oazq0.js";import{I,a as B,b as C,c as w,d as S,e as G,f as T,g as D}from"./IconBrandTypescript-C9dht-lx.js";import{D as p}from"./Divider-DbAuIkx0.js";import{A as u}from"./Anchor-DicC41C_.js";import"./Card-C2GpUThS.js";/**
- * @license @tabler/icons-react v3.31.0 - MIT
+import{c as s,u as y,j as e,L as k,b as r,d as v,T as f,I as g,e as x,f as l,S as h,G as d,h as i,F as m,i as b}from"./index-DoWB4VfU.js";import{C as M,a as t}from"./Card-B6i9BMup.js";import{I,a as B,b as C,c as w,d as S,e as G,f as T,g as D}from"./IconBrandTypescript-BCad3bBX.js";import{D as p}from"./Divider-qkErg9v_.js";import{A as u}from"./Anchor-BGAEWpX2.js";import"./Card-BfJtAXUk.js";/**
+ * @license @tabler/icons-react v3.34.0 - MIT
  *
  * This source code is licensed under the MIT license.
  * See the LICENSE file in the root directory of this source tree.
  */var L=s("outline","brand-discord","IconBrandDiscord",[["path",{d:"M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0",key:"svg-0"}],["path",{d:"M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0",key:"svg-1"}],["path",{d:"M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3",key:"svg-2"}],["path",{d:"M7 16.5c3.5 1 6.5 1 10 0",key:"svg-3"}]]);/**
- * @license @tabler/icons-react v3.31.0 - MIT
+ * @license @tabler/icons-react v3.34.0 - MIT
  *
  * This source code is licensed under the MIT license.
  * See the LICENSE file in the root directory of this source tree.
  */var z=s("outline","brand-mantine","IconBrandMantine",[["path",{d:"M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0",key:"svg-0"}],["path",{d:"M11 16c1.22 -.912 2 -2.36 2 -4a5.01 5.01 0 0 0 -2 -4",key:"svg-1"}],["path",{d:"M14 9h-2",key:"svg-2"}],["path",{d:"M14 15h-2",key:"svg-3"}],["path",{d:"M10 12h.01",key:"svg-4"}]]);/**
- * @license @tabler/icons-react v3.31.0 - MIT
+ * @license @tabler/icons-react v3.34.0 - MIT
  *
  * This source code is licensed under the MIT license.
  * See the LICENSE file in the root directory of this source tree.
  */var P=s("outline","brand-npm","IconBrandNpm",[["path",{d:"M1 8h22v7h-12v2h-4v-2h-6z",key:"svg-0"}],["path",{d:"M7 8v7",key:"svg-1"}],["path",{d:"M14 8v7",key:"svg-2"}],["path",{d:"M17 11v4",key:"svg-3"}],["path",{d:"M4 11v4",key:"svg-4"}],["path",{d:"M11 11v1",key:"svg-5"}],["path",{d:"M20 11v4",key:"svg-6"}]]);/**
- * @license @tabler/icons-react v3.31.0 - MIT
+ * @license @tabler/icons-react v3.34.0 - MIT
  *
  * This source code is licensed under the MIT license.
  * See the LICENSE file in the root directory of this source tree.
  */var A=s("outline","brand-tiktok","IconBrandTiktok",[["path",{d:"M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917z",key:"svg-0"}]]);/**
- * @license @tabler/icons-react v3.31.0 - MIT
+ * @license @tabler/icons-react v3.34.0 - MIT
  *
  * This source code is licensed under the MIT license.
  * See the LICENSE file in the root directory of this source tree.
  */var N=s("outline","brand-ubuntu","IconBrandUbuntu",[["path",{d:"M12 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0",key:"svg-0"}],["path",{d:"M17.723 7.41a7.992 7.992 0 0 0 -3.74 -2.162m-3.971 0a7.993 7.993 0 0 0 -3.789 2.216m-1.881 3.215a8 8 0 0 0 -.342 2.32c0 .738 .1 1.453 .287 2.132m1.96 3.428a7.993 7.993 0 0 0 3.759 2.19m4 0a7.993 7.993 0 0 0 3.747 -2.186m1.962 -3.43a8.008 8.008 0 0 0 .287 -2.131c0 -.764 -.107 -1.503 -.307 -2.203",key:"svg-1"}],["path",{d:"M5 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0",key:"svg-2"}],["path",{d:"M19 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0",key:"svg-3"}]]);/**
- * @license @tabler/icons-react v3.31.0 - MIT
+ * @license @tabler/icons-react v3.34.0 - MIT
  *
  * This source code is licensed under the MIT license.
  * See the LICENSE file in the root directory of this source tree.
  */var R=s("outline","brand-youtube","IconBrandYoutube",[["path",{d:"M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z",key:"svg-0"}],["path",{d:"M10 9l5 3l-5 3z",key:"svg-1"}]]);/**
- * @license @tabler/icons-react v3.31.0 - MIT
+ * @license @tabler/icons-react v3.34.0 - MIT
  *
  * This source code is licensed under the MIT license.
  * See the LICENSE file in the root directory of this source tree.
  */var U=s("outline","git-merge","IconGitMerge",[["path",{d:"M7 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0",key:"svg-0"}],["path",{d:"M7 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0",key:"svg-1"}],["path",{d:"M17 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0",key:"svg-2"}],["path",{d:"M7 8l0 8",key:"svg-3"}],["path",{d:"M7 8a4 4 0 0 0 4 4h4",key:"svg-4"}]]);/**
- * @license @tabler/icons-react v3.31.0 - MIT
+ * @license @tabler/icons-react v3.34.0 - MIT
  *
  * This source code is licensed under the MIT license.
  * See the LICENSE file in the root directory of this source tree.
