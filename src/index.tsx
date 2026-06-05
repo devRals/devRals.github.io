@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import { Center, createTheme, MantineProvider, Text } from "@mantine/core";
 
 import "@mantine/core/styles.css";
-import "@mantine/notifications/styles.css";
 import "./style.css";
 
 const theme = createTheme({
