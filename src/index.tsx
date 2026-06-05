@@ -1,20 +1,10 @@
-import { createRoot } from "react-dom/client";
-import { createTheme, MantineProvider } from "@mantine/core";
-import { Notifications } from "@mantine/notifications";
-// import App from "./App";
-import { MusicPlayer, MusicPlayerProvider } from "@/components/musicPlayer";
-import { SecretProvider } from "./components/context/secret/SecretContext";
 import { StrictMode } from "react";
-import { RouterProvider } from "react-router-dom";
-import "./i18n";
-import { router } from "./router";
+import { createRoot } from "react-dom/client";
+import { Center, createTheme, MantineProvider, Text } from "@mantine/core";
 
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
-import "mantine-flagpack/styles.css";
 import "./style.css";
-import { StatusProvider } from "./components/context/status";
-import { PageProvider } from "./components/context/page";
 
 const theme = createTheme({
     fontFamily: "undertale",
@@ -58,17 +48,11 @@ const theme = createTheme({
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
         <MantineProvider theme={theme} forceColorScheme="dark">
-            <SecretProvider secret={false}>
-                <MusicPlayerProvider>
-                    <PageProvider>
-                        <StatusProvider>
-                            <Notifications position="top-center" />
-                            <RouterProvider router={router} />
-                            <MusicPlayer />
-                        </StatusProvider>
-                    </PageProvider>
-                </MusicPlayerProvider>
-            </SecretProvider>
+            <Center>
+                <Text fz="h2">
+                    New website design is work in progress :3
+                </Text>
+            </Center>
         </MantineProvider>
     </StrictMode>,
 );

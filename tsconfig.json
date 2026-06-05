@@ -30,25 +30,10 @@
             "@/*": [
                 "./src/*"
             ],
-            "@blogs": [
-                "./blogs/index.d.ts"
-            ],
-            "@blogs/*": [
-                "./blogs/*"
-            ]
         }
     },
     "include": [
         "src",
-        "blogs",
         "vite.config.ts"
     ],
-    "mdx": {
-        "plugins": [
-            "@mdx-js/mdx",
-            "@mdx-js/react",
-            "remark-frontmatter",
-            "remark-mdx-frontmatter"
-        ]
-    }
 }
