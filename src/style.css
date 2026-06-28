@@ -7,3 +7,15 @@ body {
     font-size: 22px;
     font-family: "undertale", sans-serif;
 }
+
+.background {
+    user-select: none;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    image-rendering: pixelated;
+}
