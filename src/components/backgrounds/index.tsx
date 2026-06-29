@@ -1,13 +1,11 @@
-import { use2DCanvasBg } from "./use2DCanvasBg";
-import { useState } from "react";
-import usePlaySong from "./usePlaySong";
-import { Affix, Paper, Group, ActionIcon, Transition, Slider, Stack } from "@mantine/core";
-import { IconMusic, IconPhotoAlt, IconPlayerPauseFilled, IconPlayerPlayFilled, IconPlayerTrackNextFilled, IconPlayerTrackPrevFilled, IconVolume } from "@tabler/icons-react";
+import { use2DCanvasBg } from "@/hooks/use2DCanvasBg";
+import { Affix, Paper } from "@mantine/core";
 
 import { Backdrop } from "@devrals/backdrops"
 import { Resolution, WebGlEngine } from "@devrals/webgl-engine"
-import useWebglEngineBg from "./useWebglEngineBg";
-import { Bacground2D, BackgroundWebglEngine, useBackground2D } from "./store";
+import useWebglEngineBg from "@/hooks/useWebglEngineBg";
+import { Background2D, BackgroundWebglEngine } from "@/stores/background-store";
+import { MediaPlayer } from "../media-player";
 
 
 export function setupCanvasStyles(canvas: HTMLCanvasElement, resolution: Resolution) {
@@ -23,7 +21,7 @@ export function setupCanvasStyles(canvas: HTMLCanvasElement, resolution: Resolut
     canvas.height = resolution.height
 }
 
-export default ({ bg }: { bg: Bacground2D | BackgroundWebglEngine }) => {
+export default ({ bg }: { bg: Background2D | BackgroundWebglEngine }) => {
     const canvasRef = getCanvasRef(bg)
 
     return <div style={{
@@ -32,17 +30,17 @@ export default ({ bg }: { bg: Bacground2D | BackgroundWebglEngine }) => {
         <canvas ref={canvasRef} className="background"></canvas>
 
         <Affix position={{
-            bottom: 10,
-            right: 10,
+            top: 10,
+            left: 10,
         }}>
-            <Paper p="xs">
-                <MediaPlayer track={bg.track} />
+            <Paper p="xs" withBorder>
+                <MediaPlayer track={bg.track?.src} />
             </Paper>
         </Affix>
     </div>
 }
 
-function getCanvasRef({ effect, type, hookOptions }: Bacground2D | BackgroundWebglEngine) {
+function getCanvasRef({ effect, type, hookOptions }: Background2D | BackgroundWebglEngine) {
     return (type === "2d") ? use2DCanvasBg({
         effect: effect as Backdrop<CanvasRenderingContext2D>, ...hookOptions
     }).canvasRef : useWebglEngineBg({
@@ -50,53 +48,3 @@ function getCanvasRef({ effect, type, hookOptions }: Bacground2D | BackgroundWeb
     }).canvasRef
 }
 
-const MediaPlayer = ({ track }: { track: HTMLAudioElement | undefined }) => {
-    const { pause, play, playing, volume, setVolume, progress } = usePlaySong(track)
-    const setBackground = useBackground2D(s => s.setCurrent)
-    const [volumePanelOpened, setVolumePanelOpened] = useState(false)
-
-    const buttonProps = {
-        variant: "subtle",
-        color: "gray",
-        radius: "xs",
-        size: "lg"
-    }
-
-    return (
-        <Stack>
-            <div style={{
-                width: `${progress * 100}%`, height: 4,
-                backgroundColor: "var(--mantine-primary-color-5)"
-            }}></div>
-
-            <Group pos="relative">
-
-
-                <IconMusic />
-                <ActionIcon onClick={() => setBackground("previous")} {...buttonProps}>
-                    <IconPlayerTrackPrevFilled />
-                </ActionIcon>
-                <ActionIcon disabled={!track} onClick={playing ? pause : play} {...buttonProps}>
-                    {playing ? <IconPlayerPauseFilled /> : <IconPlayerPlayFilled />}
-                </ActionIcon>
-                <ActionIcon onClick={() => setBackground("next")} {...buttonProps}>
-                    <IconPlayerTrackNextFilled />
-                </ActionIcon>
-
-                <ActionIcon {...buttonProps} onClick={() => setVolumePanelOpened(v => !v)}>
-                    <IconVolume />
-                </ActionIcon>
-
-                <Transition mounted={volumePanelOpened}>
-                    {styles => (
-                        <Paper style={styles} pos="absolute" top={-40} right={0}>
-                            <Slider value={volume} onChange={setVolume} max={1.0} step={0.05} w={150} />
-                        </Paper>
-                    )}
-                </Transition>
-
-                <IconPhotoAlt />
-            </Group>
-        </Stack>
-    )
-} 

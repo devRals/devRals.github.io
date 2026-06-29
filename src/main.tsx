@@ -21,6 +21,7 @@ import "./style.css";
 const theme = createTheme({
     primaryColor: "teal" as MantineColor,
     fontFamily: "undertale",
+    defaultRadius: "sm",
     components: {
         Tooltip: {
             defaultProps: {
@@ -49,7 +50,7 @@ import { createRoot } from "react-dom/client";
 
 createRoot(document.getElementById("root")!).render(
     <MantineProvider theme={theme} forceColorScheme="dark">
-        <Notifications position="top-right" />
+        <Notifications position="bottom-left" />
         <RouterProvider router={router} />
     </MantineProvider>
 );
