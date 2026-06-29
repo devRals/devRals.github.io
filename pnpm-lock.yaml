@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@devrals/backdrops':
-        specifier: ^0.2.7
-        version: 0.2.7
+        specifier: ^0.3.0
+        version: 0.3.0
       '@devrals/math':
         specifier: ^0.2.3
         version: 0.2.3
@@ -156,8 +156,8 @@ packages:
     resolution: {integrity: sha512-4zBIxpPzowiZpusoFkyGVwakdRJUyuH5PxQ/PrqghfdFWWasvnCdPfQXHrenDai+gyLARulZjZowCOj6fjT4pA==}
     engines: {node: '>=6.9.0'}
 
-  '@devrals/backdrops@0.2.7':
-    resolution: {integrity: sha512-mOGPqzZm0Kdv7CS0ijs2rEo0hDjuj5BwoFB0ZMuEbkBIGsjubRMSUs+RPp1HuEBgovHnQ85fWYjPt/T442uWLA==}
+  '@devrals/backdrops@0.3.0':
+    resolution: {integrity: sha512-CMKre15It+1t4G+IW6p3NRj2hlNBpMa2nEk1ghzaczEiQek2IXiTuHkc/B7eXdNfAR4IfNTM5eY/FbuY3YZMbA==}
 
   '@devrals/math@0.2.3':
     resolution: {integrity: sha512-P+1mdEK0KBqHNWFzFZ0B18qKgSUeLu5KOvIBKXWwrL/vspRxv1DpGCvLwtwTVpVV0tfVanzC3Z8PlbNzHpNqGQ==}
@@ -1122,7 +1122,7 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@devrals/backdrops@0.2.7':
+  '@devrals/backdrops@0.3.0':
     dependencies:
       '@devrals/math': 0.2.3
       '@devrals/webgl-engine': 0.1.4

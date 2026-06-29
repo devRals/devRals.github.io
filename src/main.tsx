@@ -20,7 +20,7 @@ import "./style.css";
 
 const theme = createTheme({
     primaryColor: "teal" as MantineColor,
-    fontFamily: "undertale",
+    fontFamily: "renogare",
     defaultRadius: "sm",
     components: {
         Tooltip: {

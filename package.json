@@ -10,7 +10,7 @@
         "deploy": "gh-pages -d dist"
     },
     "dependencies": {
-        "@devrals/backdrops": "^0.2.7",
+        "@devrals/backdrops": "^0.3.0",
         "@devrals/math": "^0.2.3",
         "@devrals/webgl-engine": "^0.1.4",
         "@mantine/core": "^9.4.1",

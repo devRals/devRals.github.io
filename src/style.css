@@ -3,9 +3,13 @@
     src: url(/fonts/undertale.ttf);
 }
 
+@font-face {
+    font-family: renogare;
+    src: url(/fonts/renogare.otf);
+}
+
 body {
-    font-size: 22px;
-    font-family: "undertale", sans-serif;
+    font-family: renogare;
 }
 
 .background {

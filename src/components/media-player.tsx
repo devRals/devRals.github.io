@@ -50,7 +50,7 @@ export const MediaPlayer = ({ track }: { track: HTMLAudioElement | undefined }) 
                 <ActionIcon onClick={() => setBackground("previous")} {...buttonProps}>
                     <IconPlayerTrackPrevFilled />
                 </ActionIcon>
-                <ActionIcon disabled={!track} onClick={playing ? pause : play} {...buttonProps}>
+                <ActionIcon disabled={!track || !shouldPlay} onClick={playing ? pause : play} {...buttonProps}>
                     {playing ? <IconPlayerPauseFilled /> : <IconPlayerPlayFilled />}
                 </ActionIcon>
                 <ActionIcon onClick={() => setBackground("next")} {...buttonProps}>
