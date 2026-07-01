@@ -26,6 +26,7 @@ import amongus_hide_and_seek_cover from "@/assets/songs/amongus-hide-and-seek.we
 import golden_ratio_cover from "@/assets/songs/golden_ratio_cover.webp"
 import tick_tock_cover from "@/assets/songs/tick_tock_cover.webp"
 import third_sanctuary_cover from "@/assets/songs/third_sanctuary_cover.webp"
+import { persist } from "zustand/middleware";
 
 interface Background {
     type: "2d" | "webgl",
@@ -50,7 +51,7 @@ export const backgrounds: (Background2D | BackgroundWebglEngine)[] = [
         name: "the-third-sanctuary",
         effect: new ThirdSanctuary(),
         hookOptions: {},
-        color: "blue",
+        color: "indigo",
         track: {
             name: "'The Third Sanctuary' from Deltarune - Toby Fox",
             cover: third_sanctuary_cover,
@@ -133,8 +134,8 @@ interface BackgroundStore {
     current: number, setCurrent: (name: typeof backgrounds[number]["name"] | "next" | "previous") => void
 }
 
-export const useBackground2D = create<BackgroundStore>(
-    (set) => ({
+export const useBackground2D = create<BackgroundStore, [["zustand/persist", BackgroundStore]]>(
+    persist((set) => ({
         current: 0,
         setCurrent: (target) => set(state => {
             if (!target) return state
@@ -154,5 +155,9 @@ export const useBackground2D = create<BackgroundStore>(
             const index = backgrounds.findIndex(b => b.name === target)
             return { current: index === -1 ? state.current : index }
         })
-    })
+    }), { name: "current-background" })
 )
+
+export const useCurrentBackground = () => {
+    return backgrounds[useBackground2D(s => s.current)]
+}

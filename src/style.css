@@ -27,7 +27,7 @@ body {
 .mantine-Paper-root,
 .mantine-Notifications-notification {
     background: transparent;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
 }
 
 .mantine-Notifications-notification {

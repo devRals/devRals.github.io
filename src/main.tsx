@@ -10,12 +10,17 @@ declare module '@tanstack/react-router' {
     }
 }
 
+// # Query Client
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+const queryClient = new QueryClient()
+
 // # Theme
 import { createTheme, MantineColor, MantineProvider } from "@mantine/core";
 import { Notifications } from "@mantine/notifications"
 
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css"
+import "@mantine/charts/styles.css"
 import "./style.css";
 
 const theme = createTheme({
@@ -42,6 +47,17 @@ const theme = createTheme({
                 display: "inline",
             },
         },
+        Paper: {
+            defaultProps: {
+                withBorder: true,
+                p: "xs"
+            }
+        },
+        ActionIcon: {
+            defaultProps: {
+                variant: "subtle"
+            }
+        }
     },
 });
 
@@ -49,8 +65,10 @@ const theme = createTheme({
 import { createRoot } from "react-dom/client";
 
 createRoot(document.getElementById("root")!).render(
-    <MantineProvider theme={theme} forceColorScheme="dark">
-        <Notifications position="bottom-left" />
-        <RouterProvider router={router} />
-    </MantineProvider>
+    <QueryClientProvider client={queryClient}>
+        <MantineProvider theme={theme} forceColorScheme="dark">
+            <Notifications position="bottom-left" />
+            <RouterProvider router={router} />
+        </MantineProvider>
+    </QueryClientProvider>
 );

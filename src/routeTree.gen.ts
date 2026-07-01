@@ -9,12 +9,42 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as Testing_pageRouteImport } from './routes/testing_page'
+import { Route as TechRouteImport } from './routes/tech'
+import { Route as SysfetchRouteImport } from './routes/sysfetch'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as InterestsRouteImport } from './routes/interests'
+import { Route as BlogsRouteImport } from './routes/blogs'
+import { Route as R88x31RouteImport } from './routes/88x31'
 import { Route as IndexRouteImport } from './routes/index'
 
-const Testing_pageRoute = Testing_pageRouteImport.update({
-  id: '/testing_page',
-  path: '/testing_page',
+const TechRoute = TechRouteImport.update({
+  id: '/tech',
+  path: '/tech',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SysfetchRoute = SysfetchRouteImport.update({
+  id: '/sysfetch',
+  path: '/sysfetch',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InterestsRoute = InterestsRouteImport.update({
+  id: '/interests',
+  path: '/interests',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogsRoute = BlogsRouteImport.update({
+  id: '/blogs',
+  path: '/blogs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R88x31Route = R88x31RouteImport.update({
+  id: '/88x31',
+  path: '/88x31',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,37 +55,114 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/testing_page': typeof Testing_pageRoute
+  '/88x31': typeof R88x31Route
+  '/blogs': typeof BlogsRoute
+  '/interests': typeof InterestsRoute
+  '/projects': typeof ProjectsRoute
+  '/sysfetch': typeof SysfetchRoute
+  '/tech': typeof TechRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/testing_page': typeof Testing_pageRoute
+  '/88x31': typeof R88x31Route
+  '/blogs': typeof BlogsRoute
+  '/interests': typeof InterestsRoute
+  '/projects': typeof ProjectsRoute
+  '/sysfetch': typeof SysfetchRoute
+  '/tech': typeof TechRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/testing_page': typeof Testing_pageRoute
+  '/88x31': typeof R88x31Route
+  '/blogs': typeof BlogsRoute
+  '/interests': typeof InterestsRoute
+  '/projects': typeof ProjectsRoute
+  '/sysfetch': typeof SysfetchRoute
+  '/tech': typeof TechRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/testing_page'
+  fullPaths:
+    | '/'
+    | '/88x31'
+    | '/blogs'
+    | '/interests'
+    | '/projects'
+    | '/sysfetch'
+    | '/tech'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/testing_page'
-  id: '__root__' | '/' | '/testing_page'
+  to:
+    | '/'
+    | '/88x31'
+    | '/blogs'
+    | '/interests'
+    | '/projects'
+    | '/sysfetch'
+    | '/tech'
+  id:
+    | '__root__'
+    | '/'
+    | '/88x31'
+    | '/blogs'
+    | '/interests'
+    | '/projects'
+    | '/sysfetch'
+    | '/tech'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  Testing_pageRoute: typeof Testing_pageRoute
+  R88x31Route: typeof R88x31Route
+  BlogsRoute: typeof BlogsRoute
+  InterestsRoute: typeof InterestsRoute
+  ProjectsRoute: typeof ProjectsRoute
+  SysfetchRoute: typeof SysfetchRoute
+  TechRoute: typeof TechRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/testing_page': {
-      id: '/testing_page'
-      path: '/testing_page'
-      fullPath: '/testing_page'
-      preLoaderRoute: typeof Testing_pageRouteImport
+    '/tech': {
+      id: '/tech'
+      path: '/tech'
+      fullPath: '/tech'
+      preLoaderRoute: typeof TechRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sysfetch': {
+      id: '/sysfetch'
+      path: '/sysfetch'
+      fullPath: '/sysfetch'
+      preLoaderRoute: typeof SysfetchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interests': {
+      id: '/interests'
+      path: '/interests'
+      fullPath: '/interests'
+      preLoaderRoute: typeof InterestsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blogs': {
+      id: '/blogs'
+      path: '/blogs'
+      fullPath: '/blogs'
+      preLoaderRoute: typeof BlogsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/88x31': {
+      id: '/88x31'
+      path: '/88x31'
+      fullPath: '/88x31'
+      preLoaderRoute: typeof R88x31RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,7 +177,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  Testing_pageRoute: Testing_pageRoute,
+  R88x31Route: R88x31Route,
+  BlogsRoute: BlogsRoute,
+  InterestsRoute: InterestsRoute,
+  ProjectsRoute: ProjectsRoute,
+  SysfetchRoute: SysfetchRoute,
+  TechRoute: TechRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

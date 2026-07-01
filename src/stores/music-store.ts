@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 interface BackgroundMusicStore {
     sholdPlay: boolean,
@@ -7,8 +8,8 @@ interface BackgroundMusicStore {
     toggleShouldPlay: () => void
 }
 
-export const useBackgroundMusic = create<BackgroundMusicStore>(set => ({
-    sholdPlay: true,
+export const useBackgroundMusic = create<BackgroundMusicStore, [["zustand/persist", BackgroundMusicStore]]>(persist(set => ({
+    sholdPlay: false,
     setShouldPlay: (v) => set({ sholdPlay: v }),
     toggleShouldPlay: () => set(old => ({ sholdPlay: !old.sholdPlay })),
-}))
+}), { name: "background-audio-should-play" }))

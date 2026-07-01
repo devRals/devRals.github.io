@@ -1,11 +1,9 @@
 import { use2DCanvasBg } from "@/hooks/use2DCanvasBg";
-import { Affix, Paper } from "@mantine/core";
 
 import { Backdrop } from "@devrals/backdrops"
 import { Resolution, WebGlEngine } from "@devrals/webgl-engine"
 import useWebglEngineBg from "@/hooks/useWebglEngineBg";
 import { Background2D, BackgroundWebglEngine } from "@/stores/background-store";
-import { MediaPlayer } from "../media-player";
 
 
 export function setupCanvasStyles(canvas: HTMLCanvasElement, resolution: Resolution) {
@@ -29,14 +27,6 @@ export default ({ bg }: { bg: Background2D | BackgroundWebglEngine }) => {
     }} className="background">
         <canvas ref={canvasRef} className="background"></canvas>
 
-        <Affix position={{
-            top: 10,
-            left: 10,
-        }}>
-            <Paper p="xs" withBorder>
-                <MediaPlayer track={bg.track?.src} />
-            </Paper>
-        </Affix>
     </div>
 }
 

@@ -1,5 +1,4 @@
 import { useBackgroundMusic } from "@/stores/music-store";
-import { showNotification } from "@mantine/notifications";
 import { useEffect, useState, useRef } from "react";
 
 function playAfterInteraction(audio: HTMLAudioElement, setPlaying: (p: boolean) => void) {
@@ -24,9 +23,16 @@ export default function usePlaySong(track: HTMLAudioElement | string | undefined
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
     useEffect(() => {
-        if (!shouldPlay && audioRef.current) {
-            audioRef.current.pause()
+        if (!audioRef.current) return
+        const audio = audioRef.current
+
+        if (!shouldPlay) {
+            audio.pause()
             setPlaying(false)
+        } else {
+            audio.play()
+                .then(() => setPlaying(true))
+                .catch(() => playAfterInteraction(audio, setPlaying));
         }
     }, [shouldPlay])
 
