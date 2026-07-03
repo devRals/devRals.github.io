@@ -43,3 +43,11 @@ body {
     font-family: undertale;
     font-size: 1.5rem;
 }
+
+._88x31:hover {
+    transition: .1s ease-out;
+}
+
+._88x31:hover {
+    transform: scale(1.7);
+}

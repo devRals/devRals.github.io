@@ -1,6 +1,6 @@
 import { useCurrentBackground } from '@/stores/background-store';
 import { useRoutes } from '@/stores/routes-store';
-import { Accordion, Badge, Button, ButtonProps, Group, Image, Input, Stack, Text, Tooltip } from '@mantine/core';
+import { Accordion, Anchor, Badge, Button, ButtonProps, Group, Image, Input, Stack, Text, Tooltip } from '@mantine/core';
 import { IconBrandNodejs, IconBrandNpm, IconBrandReact, IconBrandRust, IconBrandTypescript, IconCode, IconDeviceDesktop, IconExternalLink, IconQuestionMark, IconSearch, IconTerminal2, IconWorldWww, TablerIcon } from '@tabler/icons-react';
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react';
@@ -119,9 +119,22 @@ const ProjectRenderer = ({ project }: { project: Project }) => {
                 {typeof project.description === "string" ? <Text fz="sm">{project.description}</Text> : project.description}
                 {project.buttons &&
                     <Button.Group>
-                        {project.buttons.website && <Button {...buttonProps} rightSection={<IconExternalLink />}>Website</Button>}
-                        {project.buttons.sourceCode && <Button {...buttonProps} rightSection={<IconCode />}>Source Code</Button>}
-                        {project.buttons.action && <Button {...buttonProps} onClick={project.buttons.action.fn}>{project.buttons.action.label}</Button>}
+                        {project.buttons.website &&
+                            <Button {...buttonProps} rightSection={<IconExternalLink />}>
+                                <Anchor href={project.buttons.website} target="_blank" c={themeColor}>
+                                    Website
+                                </Anchor>
+                            </Button>}
+
+                        {project.buttons.sourceCode &&
+                            <Button {...buttonProps} rightSection={<IconCode />}>
+                                <Anchor href={project.buttons.sourceCode} target="_blank" c={themeColor}>
+                                    Source Code
+                                </Anchor>
+                            </Button>}
+
+                        {project.buttons.action &&
+                            <Button {...buttonProps} onClick={project.buttons.action.fn}>{project.buttons.action.label}</Button>}
                     </Button.Group>}
             </Stack>
         </Accordion.Panel>
