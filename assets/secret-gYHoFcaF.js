@@ -1,4 +1,4 @@
-import{f as h,b as p,j as e,B as d,e as s,u as g,C as u,I as x,T as m,S as y,G as n,A as j}from"./index-CaH1YjX-.js";const a=h(r=>{const{w:o,h:t,miw:c,mih:i,...l}=p("Space",null,r);return e.jsx(d,{...l,w:o,miw:c??o,h:t,mih:i??t})});a.displayName="@mantine/core/Space";/**
+import{f as h,b as p,j as e,B as d,e as s,u as g,C as u,I as x,T as m,S as y,G as n,A as j}from"./index-BSS8m4vv.js";const a=h(r=>{const{w:o,h:t,miw:c,mih:i,...l}=p("Space",null,r);return e.jsx(d,{...l,w:o,miw:c??o,h:t,mih:i??t})});a.displayName="@mantine/core/Space";/**
  * @license @tabler/icons-react v3.44.0 - MIT
  *
  * This source code is licensed under the MIT license.
