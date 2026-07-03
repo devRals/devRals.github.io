@@ -1,8 +1,9 @@
 // # Router
-import { createRouter, RouterProvider } from "@tanstack/react-router";
+import { createMemoryHistory, createRouter, RouterProvider } from "@tanstack/react-router";
 import { routeTree } from './routeTree.gen'
 
-const router = createRouter({ routeTree })
+const history = createMemoryHistory({ initialEntries: ["/"] })
+const router = createRouter({ routeTree, history })
 
 declare module '@tanstack/react-router' {
     interface Register {
@@ -21,6 +22,7 @@ import { Notifications } from "@mantine/notifications"
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css"
 import "@mantine/charts/styles.css"
+import "mantine-flagpack/styles.css"
 import "./style.css";
 
 const theme = createTheme({

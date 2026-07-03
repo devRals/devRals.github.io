@@ -30,9 +30,12 @@ export default () => {
                             )
                         </Text>
                     </Group>
-                    {data && data.success && (
-                        <UserStatus status={data.data.discord_status} />
-                    )}
+                    <Group>
+                        {data && data.success && (
+                            <UserStatus status={data.data.discord_status} />
+                        )}
+                        <Text c="gray" fz="sm" span>UTC/GMT +3</Text>
+                    </Group>
                 </Stack>
             </Group>
         </Center>

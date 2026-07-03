@@ -1,6 +1,6 @@
 import { useCurrentBackground } from '@/stores/background-store';
 import { Anchor, Group, Image, List, Text, Title, Tooltip } from '@mantine/core';
-import { IconBrush, IconCube, IconHammer, IconMathXDivideY, IconMusic, TablerIcon } from '@tabler/icons-react';
+import { IconBrush, IconCube, IconExternalLink, IconHammer, IconMathXDivideY, IconMusic, TablerIcon } from '@tabler/icons-react';
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/interests')({
@@ -124,7 +124,7 @@ const InterestRenderer = ({ interests }: { interests: Interest[] }) => {
 
                             {int.link
                                 ? <Anchor c="gray" href={int.link} target="_blank">
-                                    <Text span>{int.name}</Text>
+                                    <Text span>{int.name}</Text><IconExternalLink size={15} />
                                 </Anchor>
                                 : <Text>{int.name}</Text>
                             }

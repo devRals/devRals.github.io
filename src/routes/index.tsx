@@ -2,7 +2,6 @@ import Socials from '@/components/layout/socials';
 import { useCurrentBackground } from '@/stores/background-store';
 import { Group, Stack, Text, Tooltip } from '@mantine/core';
 import { createFileRoute } from '@tanstack/react-router'
-import { TRFlag } from "mantine-flagpack"
 
 export const Route = createFileRoute('/')({
     component: Index,
@@ -27,9 +26,6 @@ function Index() {
                 <Text c="red" span> Turkiye </Text>{"/"}
                 <Tooltip label="Fucking hate it here">
                     <Text c="cyan" display="inline">Isparta</Text>
-                </Tooltip>
-                <Tooltip label="UTC/GMT +3">
-                    <TRFlag w={30} display="inline" size={30} />
                 </Tooltip>
                 <Text c="dimmed" span fz="xs">
                     (Please don't airstrike my house)

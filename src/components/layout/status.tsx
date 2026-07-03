@@ -1,5 +1,5 @@
 import { useCurrentBackground } from "@/stores/background-store";
-import { Divider, Group, Image, Indicator, Stack, Text, Tooltip } from "@mantine/core";
+import { Divider, Group, HoverCard, Image, Indicator, Stack, Text, Tooltip } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { LanyardResponse, Assets, useLanyard } from "react-use-lanyard";
 
@@ -30,7 +30,16 @@ const StatusData = ({ data: { data, error, success } }: { data: LanyardResponse 
                 {act.assets && <StatusImages assets={act.assets} />}
                 <Stack gap={0} w="70%">
                     <Text c={themeColor} span truncate="end">{" "}{act.name}</Text>
-                    {act.details && <Text c="dimmed" fz="sm" span truncate="end">{act.details}</Text>}
+                    {act.details &&
+                        <HoverCard disabled={act.details.length < 25}>
+                            <HoverCard.Target>
+                                <Text c="dimmed" fz="sm" span truncate="end">{act.details}</Text>
+                            </HoverCard.Target>
+                            <HoverCard.Dropdown fz="sm" p={3}>
+                                {act.details}
+                            </HoverCard.Dropdown>
+                        </HoverCard>
+                    }
                     <Text c="dimmed" fz="sm" span truncate="end">{act.state}</Text>
                 </Stack>
 

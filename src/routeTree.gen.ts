@@ -9,22 +9,28 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TechRouteImport } from './routes/tech'
 import { Route as SysfetchRouteImport } from './routes/sysfetch'
+import { Route as SkillsRouteImport } from './routes/skills'
+import { Route as SecretRouteImport } from './routes/secret'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as InterestsRouteImport } from './routes/interests'
 import { Route as BlogsRouteImport } from './routes/blogs'
 import { Route as R88x31RouteImport } from './routes/88x31'
 import { Route as IndexRouteImport } from './routes/index'
 
-const TechRoute = TechRouteImport.update({
-  id: '/tech',
-  path: '/tech',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SysfetchRoute = SysfetchRouteImport.update({
   id: '/sysfetch',
   path: '/sysfetch',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SkillsRoute = SkillsRouteImport.update({
+  id: '/skills',
+  path: '/skills',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecretRoute = SecretRouteImport.update({
+  id: '/secret',
+  path: '/secret',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsRoute = ProjectsRouteImport.update({
@@ -59,8 +65,9 @@ export interface FileRoutesByFullPath {
   '/blogs': typeof BlogsRoute
   '/interests': typeof InterestsRoute
   '/projects': typeof ProjectsRoute
+  '/secret': typeof SecretRoute
+  '/skills': typeof SkillsRoute
   '/sysfetch': typeof SysfetchRoute
-  '/tech': typeof TechRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -68,8 +75,9 @@ export interface FileRoutesByTo {
   '/blogs': typeof BlogsRoute
   '/interests': typeof InterestsRoute
   '/projects': typeof ProjectsRoute
+  '/secret': typeof SecretRoute
+  '/skills': typeof SkillsRoute
   '/sysfetch': typeof SysfetchRoute
-  '/tech': typeof TechRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -78,8 +86,9 @@ export interface FileRoutesById {
   '/blogs': typeof BlogsRoute
   '/interests': typeof InterestsRoute
   '/projects': typeof ProjectsRoute
+  '/secret': typeof SecretRoute
+  '/skills': typeof SkillsRoute
   '/sysfetch': typeof SysfetchRoute
-  '/tech': typeof TechRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -89,8 +98,9 @@ export interface FileRouteTypes {
     | '/blogs'
     | '/interests'
     | '/projects'
+    | '/secret'
+    | '/skills'
     | '/sysfetch'
-    | '/tech'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -98,8 +108,9 @@ export interface FileRouteTypes {
     | '/blogs'
     | '/interests'
     | '/projects'
+    | '/secret'
+    | '/skills'
     | '/sysfetch'
-    | '/tech'
   id:
     | '__root__'
     | '/'
@@ -107,8 +118,9 @@ export interface FileRouteTypes {
     | '/blogs'
     | '/interests'
     | '/projects'
+    | '/secret'
+    | '/skills'
     | '/sysfetch'
-    | '/tech'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -117,24 +129,32 @@ export interface RootRouteChildren {
   BlogsRoute: typeof BlogsRoute
   InterestsRoute: typeof InterestsRoute
   ProjectsRoute: typeof ProjectsRoute
+  SecretRoute: typeof SecretRoute
+  SkillsRoute: typeof SkillsRoute
   SysfetchRoute: typeof SysfetchRoute
-  TechRoute: typeof TechRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/tech': {
-      id: '/tech'
-      path: '/tech'
-      fullPath: '/tech'
-      preLoaderRoute: typeof TechRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sysfetch': {
       id: '/sysfetch'
       path: '/sysfetch'
       fullPath: '/sysfetch'
       preLoaderRoute: typeof SysfetchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skills': {
+      id: '/skills'
+      path: '/skills'
+      fullPath: '/skills'
+      preLoaderRoute: typeof SkillsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secret': {
+      id: '/secret'
+      path: '/secret'
+      fullPath: '/secret'
+      preLoaderRoute: typeof SecretRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects': {
@@ -181,8 +201,9 @@ const rootRouteChildren: RootRouteChildren = {
   BlogsRoute: BlogsRoute,
   InterestsRoute: InterestsRoute,
   ProjectsRoute: ProjectsRoute,
+  SecretRoute: SecretRoute,
+  SkillsRoute: SkillsRoute,
   SysfetchRoute: SysfetchRoute,
-  TechRoute: TechRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

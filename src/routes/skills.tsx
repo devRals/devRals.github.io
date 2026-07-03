@@ -1,8 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Heatmap } from "@mantine/charts"
 import { useCurrentBackground } from '@/stores/background-store';
-import { Anchor, Center, Divider, Group, Loader, Text, Title, Tooltip } from '@mantine/core';
-import { IconBrandMantine, IconBrandNodejs, IconBrandReact, IconBrandRust, IconBrandTypescript, IconGitBranch, IconLetterN, TablerIcon } from '@tabler/icons-react';
+import { Anchor, Center, Divider, Group, Loader, Stack, Text, Title, Tooltip } from '@mantine/core';
+import { IconBrandMantine, IconBrandNetflix, IconBrandNodejs, IconBrandReact, IconBrandRust, IconBrandTypescript, IconBrandUbuntu, IconGitBranch, IconSnowflake, TablerIcon } from '@tabler/icons-react';
+import { TRFlag, GBFlag } from "mantine-flagpack"
 
 type ContributionLevel = 0 | 1 | 2 | 3 | 4
 type Contribution = {
@@ -34,7 +35,7 @@ const ErrorComponent = () => {
     </>
 }
 
-export const Route = createFileRoute('/tech')({
+export const Route = createFileRoute('/skills')({
     component: RouteComponent,
     errorComponent: ErrorComponent,
     pendingComponent: () => <Center>
@@ -57,6 +58,7 @@ function RouteComponent() {
     const themeColor = useCurrentBackground().color
 
     return <>
+        <DummyData />
         <Title order={5}>Github Activity</Title>
         <Heatmap
             w="100%"
@@ -70,20 +72,23 @@ function RouteComponent() {
                 `var(--mantine-color-${themeColor}-3)`
             ]}
         />
-        <DummyData />
     </>
 }
 
-interface Language {
+interface Skill {
     name: string,
     icon: TablerIcon,
     href?: string
 }
 
-const languagesIUse: Language[] = [
+const techsIUse: Skill[] = [
     {
         name: "TypeScript/Javascript",
         icon: IconBrandTypescript,
+    },
+    {
+        name: "Rust",
+        icon: IconBrandRust
     },
     {
         name: "React",
@@ -98,18 +103,23 @@ const languagesIUse: Language[] = [
         icon: IconGitBranch,
     },
     {
+        name: "Nix / Nix Flakes",
+        icon: IconSnowflake,
+        href: "https://nixos.org/"
+    },
+    {
         name: "Mantine UI Library",
         icon: IconBrandMantine,
         href: "https://mantine.dev/"
     },
     {
-        name: "Rust",
-        icon: IconBrandRust
+        name: "Neovim",
+        icon: IconBrandNetflix, // :D
+        href: "https://neovim.io"
     },
     {
-        name: "Neovim",
-        icon: IconLetterN,
-        href: "https://neovim.io"
+        name: "Ubuntu/Debian/Arch Linux",
+        icon: IconBrandUbuntu,
     }
 ]
 
@@ -117,15 +127,26 @@ const DummyData = () => {
     const themeColor = useCurrentBackground().color
     return <>
         <Title order={5}>Techs I use mostly</Title>
-        <Group justify="center">
-            {languagesIUse.map((lang, i) => (
-                <Tooltip label={lang.name} key={i}>
-                    {lang.href
-                        ? <Anchor href={lang.href} c={themeColor}><lang.icon /></Anchor>
-                        : <Text c={themeColor}> <lang.icon /></Text>
+        <Group justify="center" wrap="wrap">
+            {techsIUse.map((tech, i) => (
+                <Tooltip label={tech.name} key={i}>
+                    {tech.href
+                        ? <Anchor href={tech.href} c={themeColor}><tech.icon /></Anchor>
+                        : <Text c={themeColor}> <tech.icon /></Text>
                     }
                 </Tooltip>
             ))}
         </Group>
+        <Divider />
+        <Stack>
+            <Title order={5}>Languages I Can Speak </Title>
+            <Group>
+                <TRFlag size={30} /> <Text c={themeColor} span>Turkish: </Text> <Text span>Native</Text>
+            </Group>
+            <Group>
+                <GBFlag size={30} /> <Text c={themeColor} span>English: </Text> <Text span> B2-ish</Text>
+            </Group>
+
+        </Stack>
     </>
 }

@@ -34,3 +34,12 @@ body {
     border: calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-dark-4);
     font-size: 3rem;
 }
+
+.mantine-Input-input {
+    background: transparent;
+}
+
+.undertale-font {
+    font-family: undertale;
+    font-size: 1.5rem;
+}

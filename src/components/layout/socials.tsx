@@ -1,6 +1,6 @@
 import { useCurrentBackground } from "@/stores/background-store";
 import { ActionIcon, ActionIconProps, Anchor, Center, Group, Tooltip } from "@mantine/core";
-import { IconBrandDiscord, IconBrandGithub, IconCube, IconPlaylist } from "@tabler/icons-react";
+import { IconBrandDiscord, IconBrandGithub, IconPlaylist } from "@tabler/icons-react";
 
 interface SocialButton {
     name: string,
@@ -20,6 +20,12 @@ interface LinkButton extends SocialButton {
 const buttons: (InteractiveButton | LinkButton)[] = [
     {
         type: "link",
+        name: "Github",
+        href: "https://github.com/devRals",
+        icon: <IconBrandGithub />
+    },
+    {
+        type: "link",
         name: "Discord",
         href: "https://discord.com/users/718798893445283863",
         icon: <IconBrandDiscord />
@@ -36,18 +42,12 @@ const buttons: (InteractiveButton | LinkButton)[] = [
         href: "https://music.youtube.com/playlist?list=PLBRC-TQE9D2EP1RI8ro5IF02ofLoGbZ86&si=ZlL7p3doSNvhxhTP",
         icon: <IconPlaylist />
     },
-    {
-        type: "link",
-        name: "Github",
-        href: "https://github.com/devRals",
-        icon: <IconBrandGithub />
-    },
-    {
-        type: "link",
-        name: "NameMC",
-        href: "https://namemc.com/profile/devRals",
-        icon: <IconCube />
-    }
+    // {
+    //     type: "link",
+    //     name: "NameMC (Please don't mind the skin :3)",
+    //     href: "https://namemc.com/profile/devRals",
+    //     icon: <IconCube />
+    // }
 ]
 
 export default () => {

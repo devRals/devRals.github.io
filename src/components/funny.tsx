@@ -43,3 +43,12 @@ export const YOUR_TAKING_TOO_LONG = () => {
         style={{ cursor: "pointer" }} />
 }
 
+
+export const Egg = () => {
+    const sus = useRef<HTMLAudioElement>()
+    useEffect(() => {
+        sus.current = new Audio("/audios/deltarune-egg.mp3")
+    }, [])
+
+    return <Image src="/images/egg.png" alt="SUS" w={40} onClick={() => sus.current?.play()} style={{ cursor: "pointer" }} />
+}
