@@ -1,20 +1,20 @@
-import{f as h,b as p,j as e,B as d,e as s,u as g,C as u,I as x,T as m,S as y,G as n,A as j}from"./index-BSS8m4vv.js";const a=h(r=>{const{w:o,h:t,miw:c,mih:i,...l}=p("Space",null,r);return e.jsx(d,{...l,w:o,miw:c??o,h:t,mih:i??t})});a.displayName="@mantine/core/Space";/**
- * @license @tabler/icons-react v3.44.0 - MIT
+import{g as h,h as p,j as e,B as d,c as s,u as g,C as u,f as x,b as m,S as y,G as n,A as j}from"./index-DmjQbgui.js";const a=h(r=>{const{w:o,h:t,miw:c,mih:i,...l}=p("Space",null,r);return e.jsx(d,{...l,w:o,miw:c??o,h:t,mih:i??t})});a.displayName="@mantine/core/Space";/**
+ * @license @tabler/icons-react v3.45.0 - MIT
  *
  * This source code is licensed under the MIT license.
  * See the LICENSE file in the root directory of this source tree.
  */const k=[["path",{d:"M12 5l0 14",key:"svg-0"}],["path",{d:"M18 13l-6 6",key:"svg-1"}],["path",{d:"M6 13l6 6",key:"svg-2"}]],w=s("outline","arrow-down","ArrowDown",k);/**
- * @license @tabler/icons-react v3.44.0 - MIT
+ * @license @tabler/icons-react v3.45.0 - MIT
  *
  * This source code is licensed under the MIT license.
  * See the LICENSE file in the root directory of this source tree.
  */const f=[["path",{d:"M5 12l14 0",key:"svg-0"}],["path",{d:"M5 12l6 6",key:"svg-1"}],["path",{d:"M5 12l6 -6",key:"svg-2"}]],A=s("outline","arrow-left","ArrowLeft",f);/**
- * @license @tabler/icons-react v3.44.0 - MIT
+ * @license @tabler/icons-react v3.45.0 - MIT
  *
  * This source code is licensed under the MIT license.
  * See the LICENSE file in the root directory of this source tree.
  */const v=[["path",{d:"M5 12l14 0",key:"svg-0"}],["path",{d:"M13 18l6 -6",key:"svg-1"}],["path",{d:"M13 6l6 6",key:"svg-2"}]],M=s("outline","arrow-right","ArrowRight",v);/**
- * @license @tabler/icons-react v3.44.0 - MIT
+ * @license @tabler/icons-react v3.45.0 - MIT
  *
  * This source code is licensed under the MIT license.
  * See the LICENSE file in the root directory of this source tree.

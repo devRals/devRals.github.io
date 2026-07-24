@@ -1,5 +1,5 @@
-import{e}from"./index-BSS8m4vv.js";/**
- * @license @tabler/icons-react v3.44.0 - MIT
+import{c as e}from"./index-DmjQbgui.js";/**
+ * @license @tabler/icons-react v3.45.0 - MIT
  *
  * This source code is licensed under the MIT license.
  * See the LICENSE file in the root directory of this source tree.
